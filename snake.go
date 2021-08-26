@@ -220,15 +220,16 @@ func main() {
 	}()
 
 	// Render and Game Loop
+	// TODO : Split this into a Render Loop and a Game Loop
 	for frame := 0; ; frame++ {
 		// Clear Screen For Drawing
 		screen.Clear()
 
 		// Draw Static elements
-		for i, r := range fmt.Sprintf("Frame: %d", frame) {
+		for i, r := range fmt.Sprintf("Score: %d", snake.Size()) {
 			screen.SetContent(i,0, r, nil, style)
 		}
-		for i, r := range fmt.Sprintf("Score: %d", snake.Size()) {
+		for i, r := range fmt.Sprintf("Frame: %d", frame) {
 			screen.SetContent(i,1, r, nil, style)
 		}
 		for i, r := range fmt.Sprintf("Position: (%d, %d)", snake.Position.X, snake.Position.Y) {
@@ -316,6 +317,5 @@ func main() {
 
 		// Sleep
 		time.Sleep(time.Second / 6)
-		// panic(fmt.Sprintf("Snake: %v\nPosition: (%d, %d)\nTail: (%d, %d)", snek, addedBody.Position.X, addedBody.Position.Y, removedBody.Position.X, removedBody.Position.Y))
 	}
 }
