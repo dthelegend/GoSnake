@@ -1,2 +1,2 @@
 # GoSnake
-A practice Snake Project to show off my ability in GoLang
+A practice Snake Project to showcase my ability in GoLang
